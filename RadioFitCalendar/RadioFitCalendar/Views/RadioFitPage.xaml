@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RadioFitCalendar.Views.RadioFitPage"
+             xmlns:vm="clr-namespace:RadioFitCalendar.ViewModels"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:RadioFitViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">
+                <Image Source="{Binding Radio1Image}" />
+                <Label Text="{Binding Radio1Text}" FontSize="16" Padding="0,0,0,0" HorizontalTextAlignment="Center"/>
+                <Button Margin="0,10,0,20" Text="{Binding Radio1ButtonLabel}"
+                        Command="{Binding OpenRadioFit1Command}"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" />
+                <Image Source="{Binding Radio2Image}" />
+                <Label Text="{Binding Radio2Text}" FontSize="16" Padding="0,0,0,0" HorizontalTextAlignment="Center"/>
+                <Button Margin="0,10,0,20" Text="{Binding Radio2ButtonLabel}"
+                        Command="{Binding OpenRadioFit2Command}"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" />
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
